@@ -1,0 +1,15 @@
+C:\Users\Nadezhdin\Source\Repos\Spiski\bin\Debug\net6.0\Spiski.exe
+C:\Users\Nadezhdin\Source\Repos\Spiski\bin\Debug\net6.0\Spiski.deps.json
+C:\Users\Nadezhdin\Source\Repos\Spiski\bin\Debug\net6.0\Spiski.runtimeconfig.json
+C:\Users\Nadezhdin\Source\Repos\Spiski\bin\Debug\net6.0\Spiski.dll
+C:\Users\Nadezhdin\Source\Repos\Spiski\bin\Debug\net6.0\Spiski.pdb
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.csproj.AssemblyReference.cache
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.AssemblyInfoInputs.cache
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.AssemblyInfo.cs
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.csproj.CoreCompileInputs.cache
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.dll
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\refint\Spiski.dll
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.pdb
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\Spiski.genruntimeconfig.cache
+C:\Users\Nadezhdin\Source\Repos\Spiski\obj\Debug\net6.0\ref\Spiski.dll

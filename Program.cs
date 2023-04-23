@@ -16,14 +16,26 @@ namespace Spiski
             }
             public string ToStringAdd()
             {
-                return $"\n{Surname};{Name};{Phone};{Age};{Gender}";
+                return $"{Surname};{Name};{Phone};{Age};{Gender}\n";
             }
         }
+
+        public class Listiki : List<Listik>
+        {
+            public override string ToString()
+            {
+                string s = string.Empty;
+                foreach (Listik item in this)
+                    s += item.ToStringAdd();
+                return s;
+            }
+        }
+
         static void Main(string[] args)
         {
             string _path = "Данные.csv";
             List<string> line = File.ReadAllLines(_path).ToList();
-            List<Listik> User = new();
+            Listiki User = new();
             for (int i = 0; i < line.Count; i++)
             {
                 string[] strings = line[i].Split(';');
@@ -84,21 +96,31 @@ namespace Spiski
                         Gender = genderNew
                     });
                     User.Add(newUser);
-                    File.AppendAllText(_path, newUser.ToStringAdd());
+                    File.WriteAllText(_path, newUser.ToStringAdd());
                     Console.WriteLine("Данные добавлены");
                 }
             }
 
             Console.Write("Введите имя, которое вы хотите найти: ");
             string NameSeach = Console.ReadLine();
-            List<Listik> UserLinq = User;
-            List<Listik> SortSurname = UserLinq.OrderBy(x => x.Surname).ToList();//Сортировка по алфавиту
-            List<Listik> UserAge = UserLinq.OrderBy(x => x.Age >= 40).ToList();//40+ люди
-            List<Listik> SearchName = UserLinq.OrderBy(x => x.Name == NameSeach).ToList();//Поиск по имени
-            List<Listik> SortGirl = UserLinq.OrderBy(x => x.Gender == "женский").ToList();//Поиск по имени
-            List<Listik> DeletePhone = UserLinq.Distinct().ToList();//Удаляет дубликации, ну и ладно, что их нет...
+            Listiki UserLinq = User;
+            Listiki SortSurname = new();
+            foreach (Listik l in UserLinq.OrderBy(x => x.Surname).ToList())
+                SortSurname.Add(l);//Сортировка по алфавиту
+            Listiki UserAge = new();
+            foreach (Listik l in UserLinq.OrderBy(x => x.Age >= 40).ToList())
+                UserAge.Add(l);//40+ люди
+            Listiki SearchName = new();
+            foreach (Listik l in UserLinq.OrderBy(x => x.Name == NameSeach).ToList())
+                SearchName.Add(l);//Поиск по имени
+            Listiki SortGirl = new();
+            foreach (Listik l in UserLinq.OrderBy(x => x.Gender == "женский").ToList())
+                SortGirl.Add(l);//женщины
+            Listiki DeletePhone = new();
+            foreach (Listik l in UserLinq.Distinct().ToList())
+                DeletePhone.Add(l);//Удаляет дубликации, ну и ладно, что их нет...
 
-            File.WriteAllText("SortSurname.csv",SortSurname.ToString());
+            File.WriteAllText("SortSurname.csv", SortSurname.ToString());
             File.WriteAllText("UserAge.csv", UserAge.ToString());
             File.WriteAllText("SortSurname.csv", SortSurname.ToString());
             File.WriteAllText("SearchName.csv", SearchName.ToString());
